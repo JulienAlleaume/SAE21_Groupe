@@ -1,0 +1,23 @@
+"ether1" est le port internet
+
+J'autorise l'ICMP venant du LAN : /ip firewall filter add chain=input action=accept inteface=bridge protocol=icmp connection-state=established,related,untracked,new comment="Allow ICMP from LAN"
+
+Je bloque l'ICMP venant de l'extérieur vers le LAN: /ip firewall filter add chain=forward action=drop in-inteface=ether1 protocol=icmp comment="Drop ICMP forwarding to LAN"
+
+Firewall NAT :
+
+Voila la configuration que j'ai faite pour le source-nat des Vlans :
+
+/ip firewall nat add chain=srcnat src-address=10.214.150.50/16 action=src-nat to-addresses=172.16.0.4 out-interface=ether1 comment=’vlan10’
+
+/ip firewall nat add chain=srcnat src-address=10.214.150.50/16 action=src-nat to-addresses=172.16.0.5 out-interface=ether1 comment=’vlan20’
+
+/ip firewall nat add chain=srcnat src-address=10.214.150.50/16 action=src-nat to-addresses=172.16.0.6 out-interface=ether1 comment=’vlan30’
+
+La configuration du destination-nat pour le serveur web Externe et le DNS :
+
+/ip firewall nat add chain=dstnat action=dst-nat dst-address=172.16.0.3 dst-port=80 to-addresses=10.214.150.50 protocol=tcp comment=’Accept port 80, for ServerWeb’
+
+/ip firewall nat add chain=dstnat action=dst-nat dst-address=172.16.0.3 dst-port=443 to-addresses=10.214.150.50 protocol=tcp comment=’Accept port 443, for ServerWeb’
+
+/ip firewall nat add chain=dstnat action=dst-nat dst-address=172.16.0.3 dst-port=53 to-addresses=10.214.150.50 protocol=tcp comment=’Accept port 53, for ServerDNS’
