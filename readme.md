@@ -118,4 +118,4 @@
 <br>
 
 Merci d'avoir lu jusqu'ici.   
-*~Timothée Fulop~* 
+*~Timothée Fulop* 
