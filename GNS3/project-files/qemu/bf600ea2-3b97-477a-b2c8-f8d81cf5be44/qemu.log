@@ -1,0 +1,5 @@
+Start QEMU with /usr/bin/qemu-system-x86_64 -name 'Firefox31.1.1~2-1' -m 256M -smp cpus=1,sockets=1 -enable-kvm -machine smm=off -boot order=c -drive file=/home/test/Bureau/syscall/SAE21/project-files/qemu/bf600ea2-3b97-477a-b2c8-f8d81cf5be44/hda_disk.qcow2,if=ide,index=0,media=disk,id=drive0 -uuid bf600ea2-3b97-477a-b2c8-f8d81cf5be44 -vnc 127.0.0.1:0 -monitor tcp:127.0.0.1:33181,server,nowait -net none -device e1000,mac=0c:60:0e:a2:00:00,netdev=gns3-0 -netdev socket,id=gns3-0,udp=127.0.0.1:10033,localaddr=127.0.0.1:10032 -vga std -usbdevice tablet
+
+Execution log:
+qemu-system-x86_64: -usbdevice tablet: '-usbdevice' is deprecated, please use '-device usb-...' instead
+qemu-system-x86_64: terminating on signal 15 from pid 21029 (/usr/bin/python3)
