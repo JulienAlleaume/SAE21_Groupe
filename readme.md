@@ -97,7 +97,7 @@
 
 <br>
 
-### Le serveur Web est un docker apache2 récupéré sur le site ***Dockerhub*** et n'a pas de stockage persistent, il faut donc faire une manipulation à chaque démarrage de GNS3. Le contenu du docker a été vérifié à la main pour voir si il n'y avait pas de malware ou de contenu invoulu.
+### Le serveur Web est un docker apache2 récupéré sur le site ***Dockerhub*** et n'a pas de stockage persistent, il faut donc faire une manipulation à chaque démarrage de GNS3. Le contenu du docker a été vérifié à la main pour voir s'il n'y avait pas de malware ou de contenu invoulu.
 
 <br>
 
