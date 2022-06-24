@@ -113,7 +113,7 @@
 <br>
 
 
-#### ***Plusieurs détails techniques sont disponibles ici : https://github.com/TimFlp/Carnet-de-bord/blob/master/Journal-de-bord.md***
+#### ***Plusieurs détails techniques sont disponibles ici : https://github.com/TimFlp/Carnet-de-bord***
 
 <br>
 
